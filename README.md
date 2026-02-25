@@ -63,6 +63,7 @@ FreshMart — это полноценное **React-приложение для 
 
 ## 🧩 Структура проекта
 
+```
 freshmart-react/
 ├── index.html       — HTML-оболочка с React CDN
 └── src/
@@ -80,6 +81,7 @@ freshmart-react/
         ├── App.css
         ├── ProductCard.css
         └── Cart.css
+```
 
 ---
 
