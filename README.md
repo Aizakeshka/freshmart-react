@@ -64,22 +64,22 @@ FreshMart — это полноценное **React-приложение для 
 ## 🧩 Структура проекта
 
 freshmart-react/
-├── index.html — HTML-оболочка с React CDN
+├── index.html       — HTML-оболочка с React CDN
 └── src/
-├── data.js — массив всех 96 товаров с категориями, ценой, рейтингом
-├── App.jsx — главный компонент, управление состояниями, маршрутизация
-├── components/
-│ ├── Header.jsx — шапка с навигацией
-│ ├── Footer.jsx — футер с контактами
-│ ├── ProductCard.jsx — карточка товара
-│ ├── Cart.jsx — корзина
-│ ├── Favorites.jsx — избранное
-│ ├── Filters.jsx — фильтры и сортировка
-│ └── Recommendations.jsx — блок рекомендованных товаров
-└── styles/
-├── App.css
-├── ProductCard.css
-└── Cart.css
+    ├── data.js      — массив всех 96 товаров с категориями, ценой, рейтингом
+    ├── App.jsx      — главный компонент, управление состояниями, маршрутизация
+    ├── components/
+    │   ├── Header.jsx        — шапка с навигацией
+    │   ├── Footer.jsx        — футер с контактами
+    │   ├── ProductCard.jsx   — карточка товара
+    │   ├── Cart.jsx          — корзина
+    │   ├── Favorites.jsx     — избранное
+    │   ├── Filters.jsx       — фильтры и сортировка
+    │   └── Recommendations.jsx — блок рекомендованных товаров
+    └── styles/
+        ├── App.css
+        ├── ProductCard.css
+        └── Cart.css
 
 ---
 
