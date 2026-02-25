@@ -1,0 +1,71 @@
+:root {
+  --green: #1a5c3a;
+  --green-mid: #2d7a52;
+  --green-light: #52b788;
+  --green-pale: #d8f3dc;
+  --green-faint: #f0faf2;
+  --accent: #f26419;
+  --accent-light: #ffd29d;
+  --yellow: #f4c030;
+  --red: #e63946;
+  --bg: #f6f8f6;
+  --card: #ffffff;
+  --text: #111827;
+  --text-2: #374151;
+  --muted: #6b7280;
+  --border: #e5ede7;
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 8px rgba(26,92,58,0.08);
+  --shadow: 0 4px 20px rgba(26,92,58,0.10);
+  --shadow-lg: 0 12px 40px rgba(26,92,58,0.15);
+  --font-display: 'Syne', 'Georgia', serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --transition: 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
+a { text-decoration: none; color: inherit; }
+input, select, textarea { font-family: inherit; }
+img { max-width: 100%; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--green-light); border-radius: 99px; }
+
+.container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+
+/* Cart FAB bump animation */
+#cart-fab.bump {
+  animation: cartBump 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+@keyframes cartBump {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.35) rotate(-8deg); }
+  60% { transform: scale(0.9) rotate(4deg); }
+}
+
+/* Page fade in */
+.page-enter { animation: pageIn 0.35s ease forwards; }
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Product card remove animation */
+.card-removing {
+  animation: cardRemove 0.3s ease forwards;
+}
+@keyframes cardRemove {
+  to { opacity: 0; transform: scale(0.85); }
+}
