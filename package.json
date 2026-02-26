@@ -1,0 +1,25 @@
+{
+  "name": "freshmart-react",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://Aizakeshka.github.io/freshmart-react",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.0",
+    "firebase": "^10.7.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8",
+    "gh-pages": "^5.0.0"
+  }
+}

@@ -8,7 +8,6 @@ const saveLS = (key, val) => {
   try { localStorage.setItem(key, JSON.stringify(val)) } catch {}
 }
 
-// Singleton state outside React to share across components
 let _cart = loadLS('fm_cart', {})
 let _favs = loadLS('fm_favs', [])
 let _listeners = []

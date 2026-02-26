@@ -99,7 +99,7 @@ export default function Header({ onSearch }) {
 
       {cartOpen && <CartSidebar onClose={() => setCartOpen(false)} />}
 
-      {/* Floating cart button for mobile/scroll */}
+      {}
       <button
         id="cart-fab"
         className={styles.fab}
@@ -112,7 +112,6 @@ export default function Header({ onSearch }) {
   )
 }
 
-// ── CartSidebar ─────────────────────────────────────────────────────────
 import { PRODUCTS } from '../data/products'
 
 function CartSidebar({ onClose }) {

@@ -3,120 +3,255 @@
   border-radius: var(--radius-lg);
   border: 1.5px solid var(--border);
   padding: 20px;
-  display: flex; flex-direction: column; gap: 0;
+  display: flex; 
+  flex-direction: column; 
+  gap: 0;
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
+
 .card::before {
   content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  position: absolute; 
+  height: 3px;
   background: linear-gradient(90deg, var(--green-light), var(--green));
-  opacity: 0; transition: opacity 0.25s;
+  transition: opacity 0.25s;
 }
+
 .card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
   border-color: var(--green-pale);
 }
-.card:hover::before { opacity: 1; }
+
+.card:hover::before { 
+  opacity: 1; 
+}
 
 .animIn {
   animation: cardIn 0.4s ease both;
 }
+
 @keyframes cardIn {
-  from { opacity: 0; transform: translateY(20px) scale(0.96); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from { 
+    transform: translateY(20px) scale(0.96); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
 }
+
 .removing {
   animation: cardOut 0.28s ease forwards;
 }
+
 @keyframes cardOut {
-  to { opacity: 0; transform: scale(0.88); }
+  to { 
+    opacity: 0; 
+    transform: scale(0.88); 
+  }
 }
 
 .badge {
-  position: absolute; top: 14px; left: 14px;
-  font-size: 0.7rem; font-weight: 700; padding: 3px 9px;
-  border-radius: 99px; letter-spacing: 0.03em;
+  position: absolute; 
+  top: 14px; 
+  left: 14px;
+  font-size: 0.7rem; 
+  font-weight: 700; 
+  padding: 3px 9px;
+  border-radius: 99px; 
+  letter-spacing: 0.03em;
   z-index: 2;
 }
+
 .favBtn {
-  position: absolute; top: 12px; right: 12px;
-  font-size: 1.1rem; z-index: 2;
+  position: absolute; 
+  top: 12px; 
+  right: 12px;
+  font-size: 1.1rem; 
+  z-index: 2;
   transition: transform 0.2s ease;
-  width: 32px; height: 32px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
+  width: 32px; 
+  height: 32px; 
+  border-radius: 50%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
   background: rgba(255,255,255,0.8);
 }
-.favBtn:hover { transform: scale(1.25); background: #fff; }
+
+.favBtn:hover { 
+  transform: scale(1.25); 
+  background: #fff; 
+}
+
 .favActive { animation: heartPop 0.3s ease; }
 @keyframes heartPop {
   0% { transform: scale(1); } 50% { transform: scale(1.5); } 100% { transform: scale(1); }
 }
 
 .emojiWrap {
-  display: flex; justify-content: center; align-items: center;
-  padding: 20px 0 12px; position: relative;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  padding: 20px 0 12px; 
+  position: relative;
 }
+
 .emoji {
-  font-size: 3.5rem; position: relative; z-index: 1;
+  font-size: 3.5rem; 
+  position: relative; 
+  z-index: 1;
   transition: transform 0.3s ease;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
 }
+
 .card:hover .emoji { transform: scale(1.1) rotate(-3deg); }
+
 .emojiGlow {
-  position: absolute; width: 80px; height: 80px; border-radius: 50%;
+  position: absolute; 
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%;
   background: radial-gradient(circle, var(--green-pale) 0%, transparent 70%);
-  opacity: 0; transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
+
 .card:hover .emojiGlow { opacity: 1; }
 
-.body { display: flex; flex-direction: column; gap: 8px; }
-.meta { display: flex; justify-content: space-between; align-items: center; }
-.weight { font-size: 0.76rem; color: var(--muted); background: var(--bg); padding: 3px 8px; border-radius: 99px; }
-.stars { font-size: 0.75rem; color: var(--yellow); display: flex; align-items: center; gap: 2px; }
-.ratingNum { color: var(--text-2); font-weight: 600; font-size: 0.78rem; margin-left: 2px; }
-.reviews { color: var(--muted); font-size: 0.72rem; }
-
-.name {
-  font-weight: 700; font-size: 0.97rem; line-height: 1.3;
-  color: var(--text); margin: 2px 0;
+.body { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px; 
 }
 
-.tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.meta { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.weight { 
+  font-size: 0.76rem; 
+  color: var(--muted); 
+  background: var(--bg); 
+  padding: 3px 8px; 
+  border-radius: 99px; 
+}
+
+.stars { 
+  font-size: 0.75rem; 
+  color: var(--yellow); 
+  display: flex; 
+  align-items: center; 
+  gap: 2px; 
+}
+
+.ratingNum { 
+  color: var(--text-2); 
+  font-weight: 600; 
+  font-size: 0.78rem; 
+  margin-left: 2px; 
+}
+
+.reviews { 
+  color: var(--muted); 
+  font-size: 0.72rem; 
+}
+
+.name {
+  font-weight: 700; 
+  font-size: 0.97rem; 
+  line-height: 1.3;
+  color: var(--text); 
+  margin: 2px 0;
+}
+
+.tags { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 4px; 
+}
+
 .tag {
-  font-size: 0.68rem; padding: 2px 8px; border-radius: 99px;
-  background: var(--green-faint); color: var(--green-mid); border: 1px solid var(--green-pale);
+  font-size: 0.68rem; 
+  padding: 2px 8px; 
+  border-radius: 99px;
+  background: var(--green-faint); 
+  color: var(--green-mid); 
+  border: 1px solid var(--green-pale);
   font-weight: 500;
 }
 
-.footer { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; gap: 8px; }
+.footer { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  margin-top: 4px; 
+  gap: 8px; 
+}
+
 .price {
-  font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;
+  font-family: var(--font-display); 
+  font-size: 1.25rem; 
+  font-weight: 700;
   color: var(--green);
 }
+
 .addBtn {
-  background: var(--green); color: #fff;
-  padding: 9px 16px; border-radius: var(--radius-sm);
-  font-weight: 600; font-size: 0.85rem;
-  display: flex; align-items: center; gap: 6px;
+  background: var(--green); 
+  color: #fff;
+  padding: 9px 16px; 
+  border-radius: var(--radius-sm);
+  font-weight: 600; 
+  font-size: 0.85rem;
+  display: flex; 
+  align-items: center; 
+  gap: 6px;
   transition: background var(--transition), transform var(--transition);
   white-space: nowrap;
 }
-.addBtn:hover { background: var(--green-mid); transform: scale(1.03); }
-.addBtn span { font-size: 1.1rem; font-weight: 700; }
-.qtyCtrl {
-  display: flex; align-items: center; gap: 0;
-  border: 2px solid var(--green); border-radius: var(--radius-sm);
-  overflow: hidden; background: var(--green-faint);
+
+.addBtn:hover { 
+  background: var(--green-mid); 
+  transform: scale(1.03); 
 }
+
+.addBtn span { 
+  font-size: 1.1rem; 
+  font-weight: 700; 
+}
+
+.qtyCtrl {
+  display: flex; 
+  align-items: center; 
+  gap: 0;
+  border: 2px solid var(--green); 
+  border-radius: var(--radius-sm);
+  overflow: hidden; 
+  background: var(--green-faint);
+}
+
 .qtyCtrl button {
-  width: 34px; height: 34px; font-size: 1.1rem; font-weight: 700; color: var(--green);
+  width: 34px; 
+  height: 34px; 
+  font-size: 1.1rem; 
+  font-weight: 700; 
+  color: var(--green);
   transition: background var(--transition);
 }
-.qtyCtrl button:hover { background: var(--green-pale); }
+
+.qtyCtrl button:hover { 
+  background: var(--green-pale); 
+}
+
 .qtyCtrl span {
-  min-width: 30px; text-align: center; font-weight: 700; font-size: 0.95rem; color: var(--green);
+  min-width: 30px; 
+  text-align: center; 
+  font-weight: 700; 
+  font-size: 0.95rem; 
+  color: var(--green);
 }
